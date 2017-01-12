@@ -21,5 +21,5 @@ $.ajax('/api/pictures')
       }
       $next.addClass('active');
       $active.removeClass('active');
-    }, 5000);
+    }, 7500);
   });

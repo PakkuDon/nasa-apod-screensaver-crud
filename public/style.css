@@ -9,19 +9,22 @@ body {
 }
 
 #screensaver {
+  background-color: #000;
   height: 100%;
+  position: relative;
 }
 
 #screensaver .image {
-  width: 100%;
-  height: 100%;
   background-size: cover;
   background-position: center;
   position: absolute;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   opacity: 0;
-  transition: 1s;
+  transition: 2.5s;
+  transition-timing-function: linear;
 }
 
 #screensaver .image.active {
