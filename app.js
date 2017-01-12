@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 // GET /api/pictures
 // Fetch images for screensaver
 app.get('/api/pictures', (req, res) => {
-  db.query('select * from pictures')
+  db.query('SELECT * FROM pictures')
     .then(data => {
       res.status(200).json(data);
     });
@@ -43,7 +43,7 @@ app.get('/api/pictures/load', (req, res) => {
     .then(images => {
       Promise.all(images.map(image => {
         return db.none('INSERT INTO pictures(title, explanation, url) VALUES($1, $2, $3)', [
-          image.title, image.explanation, image.hdurl
+          image.title, image.explanation, image.hdurl || image.url
         ]);
       }))
       .then(() => {
